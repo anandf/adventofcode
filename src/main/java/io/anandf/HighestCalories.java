@@ -28,7 +28,7 @@ public class HighestCalories {
                 "Sum of Max 3 calories:" + getMaxNCalorie(INPUT_FILE_PATH, 3).stream().reduce(0, (x, y) -> x + y));
     }
 
-    private static int getMaxCalorie(String inputFile) throws IOException {
+    static int getMaxCalorie(String inputFile) throws IOException {
         int maxCalorie = 0;
         int currentCalories = 0;
         Scanner scanner = new Scanner(new File(inputFile));
@@ -54,7 +54,7 @@ public class HighestCalories {
         return maxCalorie;
     }
 
-    private static List<Integer> getMaxNCalorie(String inputFile, int nMax) throws IOException {
+    static List<Integer> getMaxNCalorie(String inputFile, int nMax) throws IOException {
         PriorityQueue<Integer> maxCalorie = new PriorityQueue<>((x, y) -> Integer.compare(y, x));
         List<Integer> result = new ArrayList<>();
         if (nMax == 0) {
